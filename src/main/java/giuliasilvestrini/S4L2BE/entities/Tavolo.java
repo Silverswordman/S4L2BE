@@ -6,25 +6,26 @@ import lombok.*;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 
 public class Tavolo {
 
     private int numeroTavolo;
-    private int coperti;
-
+    private int maxCoperti;
 
     private StatoTavolo statoTavolo;
-    public Tavolo(int numeroTavolo, int coperti, StatoTavolo statoTavolo) {
-        this.numeroTavolo = numeroTavolo;
-        this.coperti = coperti;
-        this.statoTavolo = statoTavolo;
-    }
+
+//    public Tavolo(int numeroTavolo, int maxCoperti, StatoTavolo statoTavolo) {
+//        this.numeroTavolo = numeroTavolo;
+//        this.maxCoperti = maxCoperti;
+//        this.statoTavolo = statoTavolo;
+//    }
 
     @Override
     public String toString() {
         return "Tavolo{" +
                 "numeroTavolo=" + numeroTavolo +
-                ", coperti=" + coperti +
+                ", coperti=" + maxCoperti +
                 ", statoTavolo=" + statoTavolo +
                 '}';
     }
