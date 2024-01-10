@@ -2,37 +2,40 @@ package giuliasilvestrini.S4L2BE;
 
 import giuliasilvestrini.S4L2BE.entities.*;
 import giuliasilvestrini.S4L2BE.entities.Enums.StatoTavolo;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
+@PropertySource("application.properties")
 public class BeanConfiguration {
     @Bean(name = "toppings_tomato")
     public Topping toppingTomatoBean() {
-        return new Topping("Tomato", 0, 0);
+        return new Topping("Tomato", 0, 1);
     }
 
     @Bean(name = "toppings_cheese")
     public Topping toppingCheeseBean() {
-        return new Topping("Cheese", 92, 0.69);
+        return new Topping("Cheese", 92, 2);
     }
 
     @Bean(name = "toppings_ham")
     public Topping toppingHamBean() {
-        return new Topping("Ham", 35, 0.99);
+        return new Topping("Ham", 35, 1.20);
     }
 
     @Bean(name = "toppings_pineapple")
     public Topping toppingPineappleBean() {
-        return new Topping("Pineapple", 24, 0.79);
+        return new Topping("Pineapple", 24, 2);
     }
 
     @Bean(name = "toppings_salami")
     public Topping toppingSalamiBean() {
-        return new Topping("Salami", 86, 0.99);
+        return new Topping("Salami", 86, 1.50);
     }
 
 
@@ -74,27 +77,27 @@ public class BeanConfiguration {
 
     @Bean(name = "lemonade")
     public Drink lemonadeBean() {
-        return new Drink("Lemonade", 128, 1.29);
+        return new Drink("Lemonade", 128, 1.50);
     }
 
     @Bean(name = "water")
     public Drink waterBean() {
-        return new Drink("Water", 0, 1.29);
+        return new Drink("Water", 0, 1);
     }
 
     @Bean(name = "wine")
     public Drink wineBean() {
-        return new Drink("Wine", 607, 7.49);
+        return new Drink("Wine", 607, 8);
     }
 
     @Bean(name = "tavolo1")
-    public Tavolo tavolo1Bean() {
-        return new Tavolo(1, 5, StatoTavolo.Libero);
+    public Tavolo tavolo1Bean(@Value("${coperto}")int costoCoperto) {
+        return new Tavolo(1, 5, StatoTavolo.Libero, costoCoperto);
     }
 
     @Bean(name = "tavolo2")
-    public Tavolo tavolo2Bean() {
-        return new Tavolo(2, 2, StatoTavolo.Occupato);
+    public Tavolo tavolo2Bean(@Value("${coperto}")int costoCoperto) {
+        return new Tavolo(2, 2, StatoTavolo.Occupato, costoCoperto);
     }
 
 

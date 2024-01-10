@@ -39,7 +39,7 @@ public class Order {
     // metodo per  calcolare totale
 
     public double getTotale() {
-        return this.itemOrdinati.stream().mapToDouble(MenuItem::getPrice).sum() + this.numCoperti * 2;
+        return this.itemOrdinati.stream().mapToDouble(MenuItem::getPrice).sum() + this.numCoperti * this.tavolo.getCostoCoperto();
 
     }
 }

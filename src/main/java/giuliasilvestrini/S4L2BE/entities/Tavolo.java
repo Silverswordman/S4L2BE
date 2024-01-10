@@ -14,12 +14,8 @@ public class Tavolo {
     private int maxCoperti;
 
     private StatoTavolo statoTavolo;
+    private int costoCoperto;
 
-//    public Tavolo(int numeroTavolo, int maxCoperti, StatoTavolo statoTavolo) {
-//        this.numeroTavolo = numeroTavolo;
-//        this.maxCoperti = maxCoperti;
-//        this.statoTavolo = statoTavolo;
-//    }
 
     @Override
     public String toString() {
