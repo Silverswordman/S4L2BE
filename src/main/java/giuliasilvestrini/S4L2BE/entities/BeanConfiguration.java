@@ -1,5 +1,6 @@
 package giuliasilvestrini.S4L2BE.entities;
 
+import giuliasilvestrini.S4L2BE.entities.Enums.StatoTavolo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -84,6 +85,18 @@ public class BeanConfiguration {
     public Drink wineBean() {
         return new Drink("Wine", 607, 7.49);
     }
+
+    @Bean(name = "tavolo1")
+    public Tavolo tavolo1Bean() {
+        return new Tavolo(1, 5, StatoTavolo.Libero);
+    }
+
+    @Bean(name = "tavolo2")
+    public Tavolo tavolo2Bean() {
+        return new Tavolo(2, 2, StatoTavolo.Occupato);
+    }
+
+
 
     @Bean(name = "menu")
     public Menu menuBean() {

@@ -1,18 +1,31 @@
 package giuliasilvestrini.S4L2BE.entities;
 
 import giuliasilvestrini.S4L2BE.entities.Enums.StatoTavolo;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+
 public class Tavolo {
 
     private int numeroTavolo;
     private int coperti;
+
+
     private StatoTavolo statoTavolo;
+    public Tavolo(int numeroTavolo, int coperti, StatoTavolo statoTavolo) {
+        this.numeroTavolo = numeroTavolo;
+        this.coperti = coperti;
+        this.statoTavolo = statoTavolo;
+    }
+
+    @Override
+    public String toString() {
+        return "Tavolo{" +
+                "numeroTavolo=" + numeroTavolo +
+                ", coperti=" + coperti +
+                ", statoTavolo=" + statoTavolo +
+                '}';
+    }
 }
